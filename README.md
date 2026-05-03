@@ -38,9 +38,9 @@ När användaren klickar på en knapp ändras cirkelns färg slumpmässigt.
 ---
 
 ##  Projektstruktur
-index.html
-script.js
-README.md 
+- index.html
+- script.js
+- README.md 
 
 ---
 
