@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multimedia projekt med video, ljud och JavaScript interaktioner">
     <title>Multimedia Projekt</title>
 
     <style>
@@ -51,40 +52,72 @@
         }
     </style>
 </head>
+
 <body>
 
+<header>
     <h1>🎬 Multimedia & JavaScript Projekt</h1>
+</header>
+
+<main>
 
     <!-- VIDEO -->
-    <h2>Video</h2>
-    <video id="videoPlayer" controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Din webbläsare stödjer inte video.
-    </video>
+    <section>
+        <h2>Video</h2>
+
+        <video id="videoPlayer" controls aria-label="Video spelare">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+            <!-- Captions -->
+            <track kind="captions" srclang="sv" label="Svenska">
+            
+            Din webbläsare stödjer inte video.
+        </video>
+    </section>
 
     <!-- AUDIO -->
-    <h2>Ljud</h2>
-    <audio id="audioPlayer">
-        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-        Din webbläsare stödjer inte ljud.
-    </audio>
+    <section>
+        <h2>Ljud</h2>
 
-    <!-- CUSTOM CONTROLS -->
-    <div class="controls">
-        <button onclick="playMedia()">▶️ Spela</button>
-        <button onclick="pauseMedia()">⏸️ Pausa</button>
+        <audio id="audioPlayer" controls aria-label="Ljudspelare">
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Din webbläsare stödjer inte ljud.
+        </audio>
+    </section>
+
+    <!-- CONTROLS -->
+    <section class="controls">
+        <h2>Kontroller</h2>
+
+        <button onclick="playMedia()" aria-label="Spela media">▶️ Spela</button>
+        <button onclick="pauseMedia()" aria-label="Pausa media">⏸️ Pausa</button>
+
         <br><br>
-        Volym:
-        <input type="range" min="0" max="1" step="0.1" onchange="changeVolume(this.value)">
-    </div>
+
+        <label for="volume">Volym:</label>
+        <input 
+            type="range" 
+            id="volume"
+            min="0" 
+            max="1" 
+            step="0.1" 
+            onchange="changeVolume(this.value)"
+        >
+    </section>
 
     <!-- CANVAS -->
-    <h2>Canvas Interaktion</h2>
-    <canvas id="myCanvas" width="300" height="200"></canvas>
-    <br>
-    <button onclick="changeColor()">Byt färg</button>
+    <section>
+        <h2>Canvas Interaktion</h2>
 
-    <script src="script.js"></script>
+        <canvas id="myCanvas" width="300" height="200" aria-label="Canvas ritområde"></canvas>
+        <br>
+
+        <button onclick="changeColor()" aria-label="Byt färg på canvas">Byt färg</button>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
 </html>
